@@ -21,12 +21,7 @@ nav a:hover{color:#22c55e}
 section{padding:80px 60px}
 .hero{height:60vh;display:flex;align-items:flex-start;justify-content:space-between;gap:40px}
 
-/* BIG TRY SECTION */
-.big-section h2{font-size:40px}
-.big-section button{font-size:18px;padding:15px 30px}
-.big-section p{font-size:22px}
-
-.btn{background:linear-gradient(45deg,#22c55e,#4ade80);border:none;padding:12px 25px;border-radius:30px;cursor:pointer;color:#000;font-weight:bold;box-shadow:0 0 15px rgba(34,197,94,0.6);transition:0.3s}
+.btn{background:linear-gradient(45deg,#22c55e,#4ade80);border:none;padding:15px 30px;border-radius:30px;cursor:pointer;color:#000;font-weight:bold;font-size:18px;box-shadow:0 0 15px rgba(34,197,94,0.6);transition:0.3s}
 .btn:hover{transform:scale(1.1)}
 
 .profile-container{position:relative;width:520px;height:520px;margin-top:0}
@@ -45,15 +40,16 @@ section{padding:80px 60px}
 
 #complete{display:none;text-align:center;color:#22c55e;font-size:26px;margin-top:20px}
 
-footer{text-align:center;padding:40px;color:#6b7280}
+.big-section{text-align:left;margin-top:40px;max-width:650px;margin-left:60px}
 
+footer{text-align:center;padding:40px;color:#6b7280}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h3>🚀 KUNAL JADHAV</h3>
+  <h3>🚀 MY RESUME</h3>
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
@@ -67,8 +63,10 @@ footer{text-align:center;padding:40px;color:#6b7280}
   <div style="max-width:650px">
     <h1>Hi, I'm Kunal Jadhav 👋</h1>
     <h2 class="typing" style="color:#22c55e;margin-top:10px"></h2>
-    <p>
-      <span style="font-size:20px;line-height:1.6">Senior Investigation Specialist @ Amazon India, enabling data-driven decision making through Power BI, SQL & modern data platforms. Actively leveraging AI tools like Amazon Q, AWS Kiro, and Amazon Quicksuite to build intelligent solutions and drive productivity-focused AI initiatives.</span>
+    
+    <p style="font-size:26px;line-height:1.6;margin-top:10px">
+      Senior Investigation Specialist @ Amazon India, enabling data-driven decision making through Power BI, SQL & modern data platforms. 
+      Actively leveraging AI tools like Amazon Q, AWS Kiro, and Amazon Quicksuite to build intelligent solutions and drive productivity-focused AI initiatives.
     </p>
   </div>
 
@@ -78,14 +76,10 @@ footer{text-align:center;padding:40px;color:#6b7280}
   </div>
 </section>
 
-<!-- BIG INTERACTION -->
-<style>
-.big-section{margin-top:-40px}
-</style>
-<section class="big-section" style="text-align:center">
-  <h2>🎮 Try This</h2>
+<section class="big-section">
+  <h2 style="margin-left:40px;">🎮 Try This</h2>
   <button class="btn" onclick="generateInsight()">Generate Insight ⚡</button>
-  <p id="insight" style="margin-top:25px;color:#22c55e;font-size:28px;font-weight:bold;margin-bottom:40px"></p>
+  <p id="insight" style="margin-top:25px;color:#22c55e;font-size:28px;font-weight:bold;margin-bottom:40px; margin-left:-20px"></p>
 </section>
 
 <section id="about">
@@ -113,8 +107,9 @@ footer{text-align:center;padding:40px;color:#6b7280}
 </section>
 
 <section id="workflow">
-  <p style="color:#94a3b8;margin-top:10px">Select all the boxes step by step to complete the pipeline ⚡</p>
   <h2 style="font-size:36px">My Data Workflow ⚡</h2>
+  <p style="color:#94a3b8;margin-top:10px">Select all the boxes step by step to complete the pipeline ⚡</p>
+
   <div class="pipeline">
     <div class="step" onclick="selectStep(0)">📥 Collect</div>
     <div class="step" onclick="selectStep(1)">🧹 Clean</div>
@@ -122,6 +117,7 @@ footer{text-align:center;padding:40px;color:#6b7280}
     <div class="step" onclick="selectStep(3)">📊 Visualize</div>
     <div class="step" onclick="selectStep(4)">💡 Insights</div>
   </div>
+
   <div id="complete">🎉 Pipeline Complete 🚀</div>
 </section>
 
@@ -137,7 +133,10 @@ footer{text-align:center;padding:40px;color:#6b7280}
 </footer>
 
 <script>
-// typing
+function toggleTheme(){
+ document.body.classList.toggle('light');
+}
+
 const text=["Power BI","SQL","Microsoft Fabric","AI Builder"];
 let i=0,j=0,isDeleting=false;
 function type(){
@@ -154,7 +153,6 @@ function generateInsight(){
  document.getElementById('insight').textContent=insights[Math.floor(Math.random()*insights.length)];
 }
 
-// pipeline
 let current=0;
 function selectStep(i){
  const steps=document.querySelectorAll('.step');
@@ -167,7 +165,6 @@ function selectStep(i){
  }
 }
 
-// jokes
 const jokes=[
 "3 people walked into a NoSQL DB… no tables found 😂",
 "Why did SQL break up? Too many joins 😄",
@@ -186,10 +183,6 @@ setInterval(()=>{
  document.getElementById('jokeBox').textContent=jokes[jokeIndex];
  jokeIndex=(jokeIndex+1)%jokes.length;
 },2000);
-function toggleTheme(){
- document.body.classList.toggle('light');
-}
-
 </script>
 
 </body>
