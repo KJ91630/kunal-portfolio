@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunal Jadhav | Data Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0b1120;
+  color:#e5e7eb;
+  scroll-behavior:smooth;
+}
+
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+  background:rgba(15,23,42,0.9);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.logo{color:#22c55e;font-weight:600;font-size:1.4rem}
+
+nav a{
+  margin-left:25px;
+  color:#94a3b8;
+  text-decoration:none;
+  font-size:0.95rem;
+  transition:0.3s;
+}
+
+nav a:hover{color:#22c55e}
+
+section{
+  padding:120px 60px;
+  min-height:100vh;
+}
+
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hero-text h1{
+  font-size:3rem;
+}
+
+.hero-text span{color:#22c55e}
+
+.hero-text p{margin:20px 0;color:#94a3b8}
+
+.btn{
+  background:#22c55e;
+  padding:12px 25px;
+  border-radius:30px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.card{
+  background:#111827;
+  padding:25px;
+  border-radius:15px;
+  margin-top:20px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.skill{
+  padding:10px 15px;
+  border:1px solid #22c55e;
+  border-radius:20px;
+  display:inline-block;
+  margin:5px;
+}
+
+.progress{
+  background:#1f2937;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:10px;
+}
+
+.progress div{
+  height:8px;
+  background:#22c55e;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  color:#6b7280;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">KUNAL</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Hi, I'm <span>Kunal</span></h1>
+    <p>Data Analyst specializing in Power BI, SQL & Microsoft Fabric</p>
+    <button class="btn" onclick="scrollToSection('projects')">View Work</button>
+  </div>
+  <div>
+    <div class="card">📊 Data Driven Thinking</div>
+    <div class="card">⚡ Real-time Insights</div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    I transform raw data into business insights using dashboards, SQL optimization and modern tools like Microsoft Fabric.
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card">
+    <div class="skill">Power BI</div>
+    <div class="progress"><div style="width:90%"></div></div>
+
+    <div class="skill">SQL</div>
+    <div class="progress"><div style="width:85%"></div></div>
+
+    <div class="skill">MS Fabric</div>
+    <div class="progress"><div style="width:80%"></div></div>
+
+    <div class="skill">Azure</div>
+    <div class="progress"><div style="width:75%"></div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Sales Dashboard</h3>
+      <p>Power BI dashboard with KPIs and trend analysis</p>
+    </div>
+    <div class="card">
+      <h3>SQL Performance Tuning</h3>
+      <p>Optimized queries reducing execution time significantly</p>
+    </div>
+    <div class="card">
+      <h3>Fabric Data Pipeline</h3>
+      <p>Built scalable ETL pipeline using Microsoft Fabric</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: your.email@example.com</p>
+    <button class="btn" onclick="alert('Let\'s connect!')">Say Hi</button>
+  </div>
+</section>
+
+<footer>
+  © 2026 Kunal Jadhav
+</footer>
+
+<script>
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'})
+}
+</script>
+
+</body>
+</html>
