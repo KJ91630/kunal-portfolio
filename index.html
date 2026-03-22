@@ -3,202 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kunal Jadhav | Data Portfolio</title>
-
+<title>KUNAL JADHAV | Data Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Poppins',sans-serif;
-  background:#0b1120;
-  color:#e5e7eb;
-  scroll-behavior:smooth;
-}
+body{font-family:'Poppins',sans-serif;background:#0b1120;color:#e5e7eb;transition:0.4s}
+.light{background:#f3f4f6;color:#111}
 
-header{
-  position:fixed;
-  width:100%;
-  top:0;
-  display:flex;
-  justify-content:space-between;
-  padding:20px 60px;
-  background:rgba(15,23,42,0.9);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-}
-
-.logo{color:#22c55e;font-weight:600;font-size:1.4rem}
-
-nav a{
-  margin-left:25px;
-  color:#94a3b8;
-  text-decoration:none;
-  font-size:0.95rem;
-  transition:0.3s;
-}
-
+header{position:fixed;width:100%;display:flex;justify-content:space-between;padding:20px 60px;background:rgba(15,23,42,0.9);backdrop-filter:blur(12px);z-index:1000}
+nav a{margin-left:25px;color:#94a3b8;text-decoration:none;transition:0.3s}
 nav a:hover{color:#22c55e}
+.toggle{cursor:pointer;background:#22c55e;padding:5px 10px;border-radius:20px;color:#000}
 
-section{
-  padding:120px 60px;
-  min-height:100vh;
-}
+section{padding:100px 60px}
+.hero{height:100vh;display:flex;align-items:center;justify-content:space-between}
+.hero img{width:320px;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.6);transition:0.4s}
+.hero img:hover{transform:scale(1.05)}
+.typing{color:#22c55e}
 
-.hero{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
+.card{background:#111827;padding:20px;border-radius:15px;margin-top:20px;transition:0.4s}
+.card:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 20px 40px rgba(0,0,0,0.6)}
 
-.hero-text h1{
-  font-size:3rem;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.dashboard-img{width:100%;border-radius:15px;margin-top:20px;transition:0.4s}
+.dashboard-img:hover{transform:scale(1.03)}
 
-.hero-text span{color:#22c55e}
+.timeline{display:flex;justify-content:space-between;margin-top:40px}
+.step{background:#111827;padding:20px;border-radius:12px;text-align:center;width:18%;transition:0.3s}
+.step:hover{background:#22c55e;color:#000;transform:scale(1.05)}
 
-.hero-text p{margin:20px 0;color:#94a3b8}
+footer{text-align:center;padding:20px;color:#6b7280}
 
-.btn{
-  background:#22c55e;
-  padding:12px 25px;
-  border-radius:30px;
-  border:none;
-  cursor:pointer;
-  font-weight:600;
-}
+input, textarea{width:100%;padding:10px;margin-top:10px;border:none;border-radius:5px}
+button{margin-top:15px;padding:10px 20px;background:#22c55e;border:none;border-radius:20px;cursor:pointer;transition:0.3s}
+button:hover{transform:scale(1.05)}
 
-.card{
-  background:#111827;
-  padding:25px;
-  border-radius:15px;
-  margin-top:20px;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.skill{
-  padding:10px 15px;
-  border:1px solid #22c55e;
-  border-radius:20px;
-  display:inline-block;
-  margin:5px;
-}
-
-.progress{
-  background:#1f2937;
-  border-radius:20px;
-  overflow:hidden;
-  margin-top:10px;
-}
-
-.progress div{
-  height:8px;
-  background:#22c55e;
-}
-
-footer{
-  text-align:center;
-  padding:20px;
-  color:#6b7280;
-}
-
+.fade-in{opacity:0;transform:translateY(40px);transition:0.8s}
+.fade-in.show{opacity:1;transform:translateY(0)}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">KUNAL</div>
+  <h3>KUNAL JADHAV</h3>
   <nav>
-    <a href="#home">Home</a>
     <a href="#about">About</a>
-    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#workflow">Workflow</a>
     <a href="#contact">Contact</a>
+    <span class="toggle" onclick="toggleTheme()">🌗</span>
   </nav>
 </header>
 
-<section id="home" class="hero">
-  <div class="hero-text">
-    <h1>Hi, I'm <span>Kunal</span></h1>
-    <p>Data Analyst specializing in Power BI, SQL & Microsoft Fabric</p>
-    <button class="btn" onclick="scrollToSection('projects')">View Work</button>
-  </div>
+<section class="hero">
   <div>
-    <div class="card">📊 Data Driven Thinking</div>
-    <div class="card">⚡ Real-time Insights</div>
+    <h1>KUNAL JADHAV</h1>
+    <h2 class="typing"></h2>
+    <p>Sr. Investigation Specialist @ Amazon India | Power BI | SQL | Fabric</p>
   </div>
+  <img src="./images/profile.png" alt="profile">
 </section>
 
-<section id="about">
+<section id="about" class="fade-in">
   <h2>About Me</h2>
   <div class="card">
-    I transform raw data into business insights using dashboards, SQL optimization and modern tools like Microsoft Fabric.
+    8+ years of experience across seller support and risk management, currently working at Amazon India as a Sr. Investigation Specialist. I build dashboards for leadership to enable data-driven decisions using Power BI, SQL and Microsoft Fabric.
   </div>
 </section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="card">
-    <div class="skill">Power BI</div>
-    <div class="progress"><div style="width:90%"></div></div>
+<section id="projects" class="fade-in">
+  <h2>Featured Dashboard</h2>
+  <img src="./images/project1.jpg" class="dashboard-img">
+  <div class="card">Customer churn dashboard helping leadership identify retention opportunities.</div>
 
-    <div class="skill">SQL</div>
-    <div class="progress"><div style="width:85%"></div></div>
-
-    <div class="skill">MS Fabric</div>
-    <div class="progress"><div style="width:80%"></div></div>
-
-    <div class="skill">Azure</div>
-    <div class="progress"><div style="width:75%"></div></div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
+  <h2 style="margin-top:40px">Projects</h2>
   <div class="grid">
     <div class="card">
-      <h3>Sales Dashboard</h3>
-      <p>Power BI dashboard with KPIs and trend analysis</p>
+      <h3>Insurance Dashboard</h3>
+      <img src="./images/project2.png" class="dashboard-img">
     </div>
     <div class="card">
-      <h3>SQL Performance Tuning</h3>
-      <p>Optimized queries reducing execution time significantly</p>
-    </div>
-    <div class="card">
-      <h3>Fabric Data Pipeline</h3>
-      <p>Built scalable ETL pipeline using Microsoft Fabric</p>
+      <h3>Customer Churn Analysis</h3>
+      <img src="./images/project1.jpg" class="dashboard-img">
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
+<section id="workflow" class="fade-in">
+  <h2>My Data Workflow</h2>
+  <div class="timeline">
+    <div class="step">Collect</div>
+    <div class="step">Clean</div>
+    <div class="step">Model</div>
+    <div class="step">Visualize</div>
+    <div class="step">Insights</div>
+  </div>
+</section>
+
+<section id="contact" class="fade-in">
+  <h2>Contact Me</h2>
   <div class="card">
-    <p>Email: your.email@example.com</p>
-    <button class="btn" onclick="alert('Let\'s connect!')">Say Hi</button>
+    <p>Email: kunaljadhav916@outlook.com</p>
+    <p><a href="https://www.linkedin.com/in/kunal-jadhav-754316100" target="_blank">Visit LinkedIn</a></p>
+
+    <input placeholder="Your Name">
+    <input placeholder="Your Email">
+    <textarea placeholder="Message"></textarea>
+    <button onclick="alert('Message Sent!')">Send Message</button>
   </div>
 </section>
 
-<footer>
-  © 2026 Kunal Jadhav
-</footer>
+<footer>© 2026 KUNAL JADHAV</footer>
 
 <script>
-function scrollToSection(id){
-  document.getElementById(id).scrollIntoView({behavior:'smooth'})
+const text=["Data Analyst","Power BI Developer","AI + Data Enthusiast"];
+let i=0,j=0,isDeleting=false;
+function type(){
+  let current=text[i];
+  document.querySelector('.typing').textContent=current.substring(0,j);
+  if(!isDeleting && j++===current.length){isDeleting=true;setTimeout(type,1000);return}
+  if(isDeleting && j--===0){isDeleting=false;i=(i+1)%text.length}
+  setTimeout(type,80);
 }
+type();
+
+function toggleTheme(){
+  document.body.classList.toggle('light');
+}
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('show');}
+  });
+});
+
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 </script>
 
 </body>
