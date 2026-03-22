@@ -8,14 +8,18 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#0b1120;color:#e5e7eb;overflow-x:hidden}
+body{font-family:'Poppins',sans-serif;background:#0b1120;color:#e5e7eb;overflow-x:hidden;transition:0.4s}
+
+.light{background:#f3f4f6;color:#111}
+.light .card{background:#fff;color:#111}
+.light .step{background:#ddd}
 
 header{position:fixed;width:100%;display:flex;justify-content:space-between;padding:20px 60px;background:rgba(15,23,42,0.9);z-index:1000}
 nav a{margin-left:25px;color:#94a3b8;text-decoration:none}
 nav a:hover{color:#22c55e}
 
 section{padding:80px 60px}
-.hero{height:80vh;display:flex;align-items:center;justify-content:space-between}
+.hero{height:60vh;display:flex;align-items:center;justify-content:space-between}
 
 /* BIG TRY SECTION */
 .big-section h2{font-size:40px}
@@ -55,6 +59,7 @@ footer{text-align:center;padding:40px;color:#6b7280}
     <a href="#projects">Projects</a>
     <a href="#workflow">Workflow</a>
     <a href="#contact">Contact</a>
+    <span style="margin-left:20px;cursor:pointer;background:#22c55e;padding:6px 12px;border-radius:20px;color:#000" onclick="toggleTheme()">🌗</span>
   </nav>
 </header>
 
@@ -75,6 +80,9 @@ footer{text-align:center;padding:40px;color:#6b7280}
 </section>
 
 <!-- BIG INTERACTION -->
+<style>
+.big-section{margin-top:-40px}
+</style>
 <section class="big-section" style="text-align:center">
   <h2>🎮 Try This</h2>
   <button class="btn" onclick="generateInsight()">Generate Insight ⚡</button>
@@ -178,6 +186,10 @@ setInterval(()=>{
  document.getElementById('jokeBox').textContent=jokes[jokeIndex];
  jokeIndex=(jokeIndex+1)%jokes.length;
 },2000);
+function toggleTheme(){
+ document.body.classList.toggle('light');
+}
+
 </script>
 
 </body>
