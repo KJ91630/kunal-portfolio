@@ -10,24 +10,21 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Poppins',sans-serif;background:#0b1120;color:#e5e7eb;overflow-x:hidden}
 
-header{position:fixed;width:100%;display:flex;justify-content:space-between;padding:20px 60px;background:rgba(15,23,42,0.9);backdrop-filter:blur(12px);z-index:1000}
+header{position:fixed;width:100%;display:flex;justify-content:space-between;padding:20px 60px;background:rgba(15,23,42,0.9);z-index:1000}
 nav a{margin-left:25px;color:#94a3b8;text-decoration:none}
 nav a:hover{color:#22c55e}
 
 section{padding:80px 60px}
 .hero{height:80vh;display:flex;align-items:center;justify-content:space-between}
 
-/* BUTTON */
-.btn{
-  background:linear-gradient(45deg,#22c55e,#4ade80);
-  border:none;padding:12px 25px;border-radius:30px;
-  cursor:pointer;color:#000;font-weight:bold;
-  box-shadow:0 0 15px rgba(34,197,94,0.6);
-  transition:0.3s
-}
-.btn:hover{transform:scale(1.05);box-shadow:0 0 25px rgba(34,197,94,1)}
+/* BIG TRY SECTION */
+.big-section h2{font-size:40px}
+.big-section button{font-size:18px;padding:15px 30px}
+.big-section p{font-size:22px}
 
-/* PROFILE */
+.btn{background:linear-gradient(45deg,#22c55e,#4ade80);border:none;padding:12px 25px;border-radius:30px;cursor:pointer;color:#000;font-weight:bold;box-shadow:0 0 15px rgba(34,197,94,0.6);transition:0.3s}
+.btn:hover{transform:scale(1.1)}
+
 .profile-container{position:relative;width:380px;height:380px}
 .profile-container img{width:100%;border-radius:20px;transition:0.6s;position:absolute}
 .profile-container:hover img{transform:rotateY(180deg);opacity:0}
@@ -36,13 +33,15 @@ section{padding:80px 60px}
 
 .card{background:#111827;padding:20px;border-radius:15px;margin-top:20px}
 
-/* PIPELINE */
-.pipeline{display:flex;gap:15px;overflow-x:auto;margin-top:40px}
-.step{background:#111827;padding:15px;border-radius:10px;cursor:pointer;min-width:120px;text-align:center;transition:0.3s}
-.step.active{background:#22c55e;color:#000;box-shadow:0 0 20px #22c55e}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
 
-/* CONFETTI TEXT */
-#complete{display:none;text-align:center;color:#22c55e;font-size:22px;margin-top:20px}
+.pipeline{display:flex;gap:20px;overflow-x:auto;margin-top:40px}
+.step{background:#111827;padding:20px;border-radius:10px;cursor:pointer;min-width:150px;text-align:center;font-size:14px}
+.step.active{background:#22c55e;color:#000}
+
+#complete{display:none;text-align:center;color:#22c55e;font-size:26px;margin-top:20px}
+
+footer{text-align:center;padding:40px;color:#6b7280}
 
 </style>
 </head>
@@ -63,16 +62,20 @@ section{padding:80px 60px}
   <div>
     <h1>Hi, I'm Kunal Jadhav 👋</h1>
     <h2 class="typing" style="color:#22c55e;margin-top:10px"></h2>
-    <p>Senior Investigation Specialist @ Amazon India, enabling data-driven decision making through Power BI, SQL & modern data platforms.</p>
+    <p>
+      Senior Investigation Specialist @ Amazon India, enabling data-driven decision making through Power BI, SQL & modern data platforms. 
+      Actively leveraging AI tools like Amazon Q, AWS Kiro, and Amazon Quicksuite to build intelligent solutions and drive productivity-focused AI initiatives.
+    </p>
   </div>
+
   <div class="profile-container">
     <img src="./images/profile.png">
-    <div class="matrix">🧠 Processing Data...<br>Transforming chaos into insights 📊</div>
+    <div class="matrix" id="jokeBox">🧠 Loading Data Joke...</div>
   </div>
 </section>
 
-<!-- INTERACTION -->
-<section style="text-align:center">
+<!-- BIG INTERACTION -->
+<section class="big-section" style="text-align:center">
   <h2>🎮 Try This</h2>
   <button class="btn" onclick="generateInsight()">Generate Insight ⚡</button>
   <p id="insight" style="margin-top:20px;color:#22c55e"></p>
@@ -81,25 +84,29 @@ section{padding:80px 60px}
 <section id="about">
   <h2>About Me</h2>
   <div class="card">
-    With over 8 years of experience spanning seller support, risk management, and analytics, I specialize in transforming complex datasets into actionable insights. My work focuses on enabling leadership teams to make faster, smarter decisions through intuitive dashboards, efficient data models, and modern platforms like Power BI, SQL, and Microsoft Fabric. I am deeply passionate about data—exploring it, shaping it, and presenting it in ways that create real business impact.
+    With over 8 years of experience spanning seller support, risk management, and analytics, I specialize in transforming complex datasets into actionable insights. My work focuses on enabling leadership teams to make faster, smarter decisions through intuitive dashboards, efficient data models, and modern platforms like Power BI, SQL, and Microsoft Fabric.
   </div>
 </section>
 
 <section id="projects">
   <h2>Projects 🚀</h2>
-  <div class="card">Data-driven dashboards for churn and insurance analytics.</div>
+  <div class="grid">
+    <div class="card">
+      <img src="./images/project1.jpg" style="width:100%;border-radius:10px">
+    </div>
+    <div class="card">
+      <img src="./images/project2.png" style="width:100%;border-radius:10px">
+    </div>
+  </div>
 </section>
 
-<!-- WORD CLOUD -->
 <section>
   <h2>My Data Universe 🌌</h2>
-  <img src="./images/data cloud.png" style="width:100%;border-radius:20px">
+  <img src="./images/datacloud.png" style="width:100%;border-radius:20px">
 </section>
 
-<!-- PIPELINE -->
 <section id="workflow">
-  <h2 style="font-size:32px">My Data Workflow ⚡</h2>
-
+  <h2 style="font-size:36px">My Data Workflow ⚡</h2>
   <div class="pipeline">
     <div class="step" onclick="selectStep(0)">📥 Collect</div>
     <div class="step" onclick="selectStep(1)">🧹 Clean</div>
@@ -107,22 +114,39 @@ section{padding:80px 60px}
     <div class="step" onclick="selectStep(3)">📊 Visualize</div>
     <div class="step" onclick="selectStep(4)">💡 Insights</div>
   </div>
-
   <div id="complete">🎉 Pipeline Complete 🚀</div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
   <p>Email: kunaljadhav916@outlook.com</p>
-  <p><a href="https://www.linkedin.com/in/kunal-jadhav-754316100" target="_blank">LinkedIn Profile</a></p>
+  <p><a href="https://www.linkedin.com/in/kunal-jadhav-754316100" target="_blank">LinkedIn</a></p>
 </section>
 
+<footer>
+  ⭐ ⭐ ⭐ ⭐ ⭐ <br>
+  "Turning data into decisions, one insight at a time." ✨
+</footer>
+
 <script>
+// typing
+const text=["Power BI","SQL","Microsoft Fabric","AI Builder"];
+let i=0,j=0,isDeleting=false;
+function type(){
+ let current=text[i];
+ document.querySelector('.typing').textContent=current.substring(0,j);
+ if(!isDeleting && j++===current.length){isDeleting=true;setTimeout(type,1000);return}
+ if(isDeleting && j--===0){isDeleting=false;i=(i+1)%text.length}
+ setTimeout(type,80);
+}
+type();
+
 function generateInsight(){
- const insights=["Data reveals patterns 🔍","Insights drive decisions 📊","Numbers tell stories 📖"];
+ const insights=["Numbers tell stories 📖","Data reveals patterns 🔍","Insights drive decisions 📊"];
  document.getElementById('insight').textContent=insights[Math.floor(Math.random()*insights.length)];
 }
 
+// pipeline
 let current=0;
 function selectStep(i){
  const steps=document.querySelectorAll('.step');
@@ -134,18 +158,26 @@ function selectStep(i){
    document.getElementById('complete').style.display='block';
  }
 }
-// typing animation
-const text=["Power BI Developer","SQL & Data Modeling","Microsoft Fabric","AI + Data Enthusiast"];
-let i=0,j=0,isDeleting=false;
-function type(){
- let current=text[i];
- document.querySelector('.typing').textContent=current.substring(0,j);
- if(!isDeleting && j++===current.length){isDeleting=true;setTimeout(type,1000);return}
- if(isDeleting && j--===0){isDeleting=false;i=(i+1)%text.length}
- setTimeout(type,80);
-}
-type();
 
+// jokes
+const jokes=[
+"3 people walked into a NoSQL DB… no tables found 😂",
+"Why did SQL break up? Too many joins 😄",
+"I love data… it always speaks truth 📊",
+"Without data, you're just guessing 🤔",
+"Data analysts do it with precision 😉",
+"In God we trust, all others bring data 📈",
+"Data cleaning is 80% of the job 🧹",
+"Bad data → bad decisions 😬",
+"SQL is my love language ❤️",
+"Data never lies, people do 😄"
+];
+
+let jokeIndex=0;
+setInterval(()=>{
+ document.getElementById('jokeBox').textContent=jokes[jokeIndex];
+ jokeIndex=(jokeIndex+1)%jokes.length;
+},2000);
 </script>
 
 </body>
