@@ -26,9 +26,6 @@ section{padding:80px 60px}
 
 .profile-container{position:relative;width:520px;height:520px;margin-top:0}
 .profile-container img{width:100%;border-radius:20px;transition:0.6s;position:relative}
-.profile-container:hover img{transform:rotateY(180deg);opacity:0}
-.matrix{position:absolute;width:100%;height:100%;background:#000;color:#22c55e;display:flex;align-items:center;justify-content:center;border-radius:20px;opacity:0;transition:0.6s;text-align:center;padding:20px}
-.profile-container:hover .matrix{opacity:1}
 
 .card{background:#111827;padding:20px;border-radius:15px;margin-top:20px}
 
@@ -71,15 +68,14 @@ footer{text-align:center;padding:40px;color:#6b7280}
   </div>
 
   <div class="profile-container">
-    <img src="./images/profile.png">
-    <div class="matrix" id="jokeBox">🧠 Loading Data Joke...</div>
-  </div>
+  <img src="./images/profile.png">
+</div>
 </section>
 
 <section class="big-section">
   <h2 style="margin-left:40px;">🎮 Try This</h2>
   <button class="btn" onclick="generateInsight()">Generate Insight ⚡</button>
-<p id="insight" style="margin-top:25px;color:#22c55e;font-size:28px;font-weight:bold;margin-bottom:40px;margin-left:-40px"></p>
+<p id="insight" style="margin-top:25px;color:#22c55e;font-size:28px;font-weight:bold;margin-bottom:40px;margin-left:-50px"></p>
 </section>
 
 <section id="about">
@@ -165,24 +161,7 @@ function selectStep(i){
  }
 }
 
-const jokes=[
-"3 people walked into a NoSQL DB… no tables found 😂",
-"Why did SQL break up? Too many joins 😄",
-"I love data… it always speaks truth 📊",
-"Without data, you're just guessing 🤔",
-"Data analysts do it with precision 😉",
-"In God we trust, all others bring data 📈",
-"Data cleaning is 80% of the job 🧹",
-"Bad data → bad decisions 😬",
-"SQL is my love language ❤️",
-"Data never lies, people do 😄"
-];
 
-let jokeIndex=0;
-setInterval(()=>{
- document.getElementById('jokeBox').textContent=jokes[jokeIndex];
- jokeIndex=(jokeIndex+1)%jokes.length;
-},2000);
 </script>
 
 </body>
